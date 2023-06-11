@@ -64,7 +64,7 @@ jobs:
          uses: softprops/action-gh-release@v1
          if: startsWith(github.ref, 'refs/tags/')
          with:
-           files: $GITHUB_WORKSPACE/ErfanGSIs/output/final/*
+           files: /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/final/*
            token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
 
          
