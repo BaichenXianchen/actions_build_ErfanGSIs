@@ -61,11 +61,9 @@ jobs:
               zip -r final/GSI.zip ./*
        
        - name: Upload to release
-         run: |
-              cd $GITHUB_WORKSPACE/ErfanGSIs/output/
          uses: JasonEtco/upload-to-release@master
          with: 
-           args: GSI.zip
+           args: $GITHUB_WORKSPACE/ErfanGSIs/output/final/GSI.zip
          env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
