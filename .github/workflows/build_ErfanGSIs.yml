@@ -1,12 +1,8 @@
+
 name: build_ErfanGSIs
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-     - main
+  repository_dispatch:
   workflow_dispatch:
 #  release:
 #    types: [published]
