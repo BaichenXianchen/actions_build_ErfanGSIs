@@ -61,11 +61,11 @@ jobs:
               zip -r final/GSI.zip ./*
        
        - name: Upload to release
-         uses: JasonEtco/upload-to-release@master
-         with: 
-           args: $GITHUB_WORKSPACE/ErfanGSIs/output/final/GSI.zip
-         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         uses: softprops/action-gh-release@v1
+         if: startsWith(github.ref, 'refs/tags/')
+         with:
+           files: $GITHUB_WORKSPACE/ErfanGSIs/output/final/*
+           token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
 
          
             
