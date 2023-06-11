@@ -64,8 +64,7 @@ jobs:
        - name: Upload miuiGSI release
          uses: actions/upload-artifact@v3
          with:
-          name: ${{ steps.prepareArtifact.outputs.miuiGSIReleaseName }}
-          path: "./*"
+          path: "./GSI.zip"
 
          
             
