@@ -60,12 +60,11 @@ jobs:
               mkdir final
               zip -r final/GSI.zip ./*
               cd $GITHUB_WORKSPACE/ErfanGSIs/output/final/
-       - name: Upload to release
-         uses: softprops/action-gh-release@v1
-         if: startsWith(github.ref, 'refs/tags/')
+       - name: Upload MIUI-GSI release
+         uses: actions/upload-artifact@v3
          with:
-           files: GSI.zip
-           token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          name: ${{ steps.prepareArtifact.outputs.MIUIGSIReleasesName }}
+          path: "./*"
 
          
             
